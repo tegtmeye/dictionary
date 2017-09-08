@@ -6,7 +6,6 @@
 \ProvidesPackage{dictionary}[2013/3/14]
 
 \RequirePackage{glossaries}
-\RequirePackage{multibib}
 \RequirePackage{siunitx}
 
 
@@ -15,10 +14,10 @@
 
 \DeclareOption{cite}{
 
+%%\newcites{dict}{Dictionary References}
 %\newcites{dict}{Dictionary References}
-\newcites{dict}{Dictionary References}
-\bibliographystyledict{alpha}
-\renewcommand{\maybeCite}[1]{\citedict{#1}}
+%\bibliographystyledict{alpha}
+%\renewcommand{\maybeCite}[1]{\citedict{#1}}
 }
 
 
@@ -26,7 +25,7 @@
 
 \ProcessOptions\relax
 
-\newglossary{dictionarycitation}{dict}{dicto}{Dictionary}
+%\newglossary{dictionarycitation}{dict}{dicto}{Dictionary}
 
 %\providecommand{\dictionaryCite}[1]{\textsc{#1}}
 
