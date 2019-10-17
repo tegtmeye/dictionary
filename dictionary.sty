@@ -5,28 +5,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{dictionary}[2013/3/14]
 
-\RequirePackage{glossaries}
-\RequirePackage{siunitx}
+\DeclareOption*{
+	\PassOptionsToPackage{\CurrentOption}{glossaries}
+}
 
 
-\newcommand{\maybeCite}{}
-
-
-\DeclareOption{cite}{
+%\DeclareOption{cite}{
 
 %%\newcites{dict}{Dictionary References}
 %\newcites{dict}{Dictionary References}
 %\bibliographystyledict{alpha}
 %\renewcommand{\maybeCite}[1]{\citedict{#1}}
-}
+%}
 
 
-\ExecuteOptions{cite} %default option
+%\ExecuteOptions{cite} %default option
 
 \ProcessOptions\relax
+
+\RequirePackage{siunitx}
+\RequirePackage{glossaries} 
+
+\newcommand{\maybeCite}{}
+
 
 %\newglossary{dictionarycitation}{dict}{dicto}{Dictionary}
 
 %\providecommand{\dictionaryCite}[1]{\textsc{#1}}
 
 \endinput
+
+
+% From glossaries documentation: If you are developing a class or package that loads glossaries, I recom- mend that you don’t force the user into a particular indexing method by adding an unconditional \makeglossaries into your class or package code. Aside from forcing the user into a particular indexing method, it means that they’re unable to use any commands that must come before \makeglossaries (such as \newglossary) and they can’t switch off the indexing whilst working on a draft document.
